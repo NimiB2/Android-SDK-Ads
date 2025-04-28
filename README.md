@@ -1,152 +1,108 @@
-# AdSDK - Android Video Ad Library
-
+# AdSDK – Android Video Ad Library
 
 ## Overview
-AdSDK is a powerful Android library designed to seamlessly integrate video advertisements into mobile applications with minimal development overhead.
+**AdSDK** is an Android SDK that lets developers preload, display, and track video advertisements inside their apps in just a few lines of code.  
+A lightweight demo app is included to showcase typical integration flows.
 
+For advanced campaign management a companion Flask + MongoDB backend is available, but server details are documented separately so this README stays focused on the SDK itself.
+
+---
 
 ## Documentation
-📄 For detailed documentation, visit [AdSDK Documentation](https://nimib2.github.io/AdSDK/)
+Full guides and API reference are available at **[AdSDK Documentation](https://nimib2.github.io/AdSDK/)**.
 
+---
 
-## 🖼️ Screenshots
+## 📸 Screenshots
 
 <table>
   <tr>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/4532ea8f-8649-4407-9acf-2eff2a21c572" width="180"/><br/>
+      <img src="https://github.com/user-attachments/assets/4532ea8f-8649-4407-9acf-2eff2a21c572" width="230"/><br/>
       <sub><b>Ad&nbsp;Integration&nbsp;Flow</b></sub>
     </td>
     <td width="25"></td>  <!-- spacer -->
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/4f8bf291-5716-49d8-92ef-102c9d977545" width="180"/><br/>
+      <img src="https://github.com/user-attachments/assets/4f8bf291-5716-49d8-92ef-102c9d977545" width="230"/><br/>
       <sub><b>SDK&nbsp;User&nbsp;Interface</b></sub>
     </td>
     <td width="25"></td>  <!-- spacer -->
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/0cceb809-3828-4f93-8983-4f6e6eebfff9" width="180"/><br/>
+      <img src="https://github.com/user-attachments/assets/0cceb809-3828-4f93-8983-4f6e6eebfff9" width="230"/><br/>
       <sub><b>End-Card&nbsp;Screen</b></sub>
     </td>
   </tr>
 </table>
 
+---
 
-## Key Features
-- 🎥 Smooth Video Ad Playback
-- 🔄 Intelligent Ad Preloading
-- 📊 Comprehensive Event Tracking
-- 🏆 Flexible Reward System Integration
-- 🌐 Easy Backend Communication
+## Sample Video
 
-## Quick Integration
+[![Watch Demo](https://res.cloudinary.com/dyr4cxjrs/video/upload/v1745858282/AD-SDK_btcpu1.mp4)
 
-### 1. Dependency Installation
-Add to your app's `build.gradle`:
-```groovy
-dependencies {
-    implementation 'dev.nimrod:adsdk-lib:1.0.0'
-}
-```
+---
 
-### 2. SDK Initialization
-In your main Activity or Application class:
+## Features
+
+### Android SDK (`adsdk_lib`)
+- Preload and cache ads for a seamless user experience.
+- Display video ads with configurable **skip** and **exit** timers.
+- Interactive end‑card with a call‑to‑action button.
+- Built‑in event tracking: **view**, **click**, **skip**, **exit**.
+- Reward‑system hooks for incentivised ads.
+- Automatic lifecycle management (pause / resume tracking).
+
+### Server (`flask‑ad‑server`)
+- Advertiser & ad management endpoints.
+- Centralised event logging and daily aggregation.
+- Swagger‑generated API docs for easy exploration.
+
+---
+
+## Tech Stack
+- **Android SDK:** Java, Retrofit, Gson.
+- **Backend:** Python, Flask, MongoDB, Flasgger.
+- **Database:** MongoDB Atlas.
+
+---
+
+## Android SDK – Quick Integration
+
+1. **Add the dependency** (to be published soon via GitHub Packages or JitPack).
+2. **Initialise the SDK** in your `Application` or first `Activity`:
+
 ```java
-public class YourMainActivity extends AppCompatActivity {
+AdSdk.init(context, new AdCallback() {
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        
-        // Initialize AdSDK with callback
-        AdSdk.init(this, new AdCallback() {
-            @Override
-            public void onAdAvailable(Ad ad) {
-                // Ad is ready to display
-                // Enable ad-related UI elements
-            }
-
-            @Override
-            public void onAdFinished() {
-                // Ad completed
-                // Give user reward or continue game flow
-                giveUserReward();
-            }
-
-            @Override
-            public void onNoAvailable(Ad ad) {
-                // No ads currently available
-                // Disable ad-related UI or show alternative
-            }
-
-            @Override
-            public void onError(String message) {
-                // Handle initialization errors
-                Log.e("AdSDK", "Initialization error: " + message);
-            }
-        });
-    }
-}
+    public void onAdAvailable(Ad ad) { /* handle available ad */ }
+    @Override
+    public void onAdFinished() { /* reward the user */ }
+    @Override
+    public void onNoAvailable(Ad ad) { /* handle no ad */ }
+    @Override
+    public void onError(String message) { /* handle errors */ }
+});
 ```
 
-### 3. Showing an Ad
+3. **Show an ad** when ready:
+
 ```java
-// Check if ad is ready
 if (AdSdk.isAdReady()) {
-    // Show ad in current activity
-    AdSdk.showAd(this);
-} else {
-    // Optionally, trigger manual ad load
-    Toast.makeText(this, "Ad loading...", Toast.LENGTH_SHORT).show();
+    AdSdk.showAd(activity);
 }
 ```
 
-### 4. Reward Handling
-```java
-private void giveUserReward() {
-    // Example reward mechanism
-    gameCoins += 100;
-    updateUserInterface();
-    
-    // Log or track reward
-    Log.d("Reward", "User earned 100 coins from ad");
-}
-```
+4. **Grant rewards** inside `onAdFinished()`.
 
-## Advanced Usage
-
-### Checking Ad Status
-```java
-// Check if an ad is currently available
-boolean adReady = AdSdk.isAdReady();
-
-// Get current ad details
-Ad currentAd = AdSdk.getCurrentAd();
-```
-
-## Requirements
-- Minimum Android 5.0 (API 21)
-- Internet Permission
-- JSON parsing support
-
+---
 
 ## License
+Copyright 2025 Nimrod Bar
 
-### AdSDK Library License
-Copyright (c) 2024 Nimrod Bar
+Licensed for use with the AdSDK Project (the "Software").
 
-Permission is hereby granted to any person obtaining a copy of this software and associated documentation files (the "Software"), to use, copy, modify, merge, publish, distribute, and/or sublicense the Software, subject to the following conditions:
+You may use, modify, and distribute this Software for personal, academic, or commercial purposes, subject to the following conditions:
 
-1. **Personal and Commercial Use**: The Software may be used for personal, academic, and commercial purposes.
-
-2. **Attribution**: You must retain the original copyright notice in all copies or substantial portions of the Software.
-
-3. **Restrictions**:
-   - You may NOT create a competing advertising SDK or ad-serving platform without prior written permission.
-   - You may NOT remove or alter the original copyright and license notices.
-
-4. **Derivative Works**: Modifications are allowed, but you must clearly indicate changes made to the original Software.
-
-5. **No Warranty**: The Software is provided "AS IS", without warranty of any kind, express or implied.
-
-6. **Liability**: The authors are not liable for any damages arising from the use of this Software.
-
-By using this Software, you agree to these terms.
+- Retain this copyright notice and a copy of the license in all copies or substantial portions of the Software.
+- Do **not** create or distribute a competing advertising SDK or ad‑serving platform without prior written permission from the copyright holder.
+- The Software is provided **"AS IS"**, without warranty of any kind.
