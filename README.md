@@ -1,110 +1,118 @@
-Below is a cleaner, more “GitHub-ready” README draft.  
-I tightened the language, grouped related sections, and added a few niceties (badges, TOC, explicit install placeholder). Feel free to copy-paste or tweak further.
+# AdSDK – Android Video Ad Library
 
-```markdown
-# AdSDK – Android Video Ads Made Simple
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](#license) ![Platform](https://img.shields.io/badge/platform-android-green) ![Min API](https://img.shields.io/badge/min--api-21+-blue)
+## Overview
+**AdSDK** is an Android SDK that lets developers preload, display, and track video advertisements inside their apps in just a few lines of code.  
+A lightweight demo app is included to showcase typical integration flows.
 
-> A lightweight Android library that preloads, shows, and tracks rewarded or interstitial **video ads** in just a few lines of code.  
-> A demo app is included; a companion Flask + MongoDB backend is documented separately.
+For advanced campaign management a companion Flask + MongoDB backend is available, but server details are documented separately so this README stays focused on the SDK itself.
 
 ---
 
-## 📑 Table of Contents
-1. [Key Features](#key-features)  
-2. [Architecture](#architecture)  
-3. [Quick Start](#quick-start)  
-4. [Screenshots & Demo](#screenshots--demo)  
-5. [Tech Stack](#tech-stack)  
-6. [Documentation](#documentation)  
-7. [License](#license)
+### Project Architecture
+
+The Ad SDK system consists of several interconnected components that work together to deliver ads to mobile applications:
+
+<img src="https://github.com/user-attachments/assets/e4b1569d-e86d-41d7-a824-c2f7c30b42f0" width="150"/>
 
 ---
 
-## ✨ Key Features
-| Category | Highlights |
-|----------|------------|
-| **Ad Delivery** | • Preload & cache videos  • Configurable **skip** / **exit** timers |
-| **User Experience** | • Polished end-card with CTA  • Reward-system hooks |
-| **Analytics** | • Built-in event tracking (view/click/skip/exit)  • Auto lifecycle pause/resume |
-| **Backend (Optional)** | • Advertiser / ad CRUD  • Centralised event log & daily stats  • Swagger API |
+## Documentation
+Full guides and API reference are available at **[AdSDK Documentation](https://nimib2.github.io/AdSDK/)**.
 
 ---
 
-## 🗺️ Architecture
-```
-Mobile App  ─┬─►  AdSDK (lib)  ───►  Flask API  ───►  MongoDB Atlas
-             │                 ▲           ▲
-             └──── Demo App ───┘           └─ Admin Portal (optional)
-```
-<sup>*Dashed components are optional extras outside this SDK repo.*</sup>
+## 📸 Screenshots
 
----
-
-## ⚡ Quick Start
-### 1 · Install
-```gradle
-repositories { mavenCentral() /* or JitPack */ }
-
-dependencies {
-    implementation("com.your-org:adsdk:1.0.0") // ← coming soon
-}
-```
-
-### 2 · Initialise
-```java
-AdSdk.init(
-    context,
-    new AdCallback() {
-        public void onAdAvailable(@NonNull Ad ad) { /* ready */ }
-        public void onAdFinished()               { /* reward */ }
-        public void onNoAvailable()              { /* fallback */ }
-        public void onError(@NonNull String e)   { Log.e("AdSDK", e); }
-    }
-);
-```
-
-### 3 · Show an Ad
-```java
-if (AdSdk.isAdReady()) {
-    AdSdk.showAd(activity);
-}
-```
-
----
-
-## 📸 Screenshots & Demo
 <table>
   <tr>
-    <td align="center"><img src="https://github.com/user-attachments/assets/4532ea8f-8649-4407-9acf-2eff2a21c572" width="160"><br><sub>Integration Flow</sub></td>
-    <td align="center"><img src="https://github.com/user-attachments/assets/4f8bf291-5716-49d8-92ef-102c9d977545" width="160"><br><sub>In-App UI</sub></td>
-    <td align="center"><img src="https://github.com/user-attachments/assets/0cceb809-3828-4f93-8983-4f6e6eebfff9" width="160"><br><sub>End-Card</sub></td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/4532ea8f-8649-4407-9acf-2eff2a21c572" width="150"/><br/>
+      <sub><b>Ad&nbsp;Integration&nbsp;Flow</b></sub>
+    </td>
+    <td width="25"></td>  <!-- spacer -->
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/4f8bf291-5716-49d8-92ef-102c9d977545" width="150"/><br/>
+      <sub><b>SDK&nbsp;User&nbsp;Interface</b></sub>
+    </td>
+    <td width="25"></td>  <!-- spacer -->
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/0cceb809-3828-4f93-8983-4f6e6eebfff9" width="150"/><br/>
+      <sub><b>End-Card&nbsp;Screen</b></sub>
+    </td>
   </tr>
 </table>
 
-[![Watch demo](docs/demo-thumb.png)](https://res.cloudinary.com/dyr4cxjrs/video/upload/v1745858282/AD-SDK_btcpu1.mp4)
+---
+
+## 🎥 Sample Video
+
+[<img src="docs/demo-thumb.png" width="150" alt="Watch demo"/>](https://res.cloudinary.com/dyr4cxjrs/video/upload/v1745858282/AD-SDK_btcpu1.mp4)
+
+
 
 ---
 
-## 🔧 Tech Stack
-| Layer      | Tech |
-|------------|------|
-| **Android**| Java · Retrofit · Gson |
-| **Backend**| Python · Flask · Flasgger |
-| **Data**   | MongoDB Atlas |
+## Features
+
+### Android SDK (adsdk_lib)
+- Preload and cache ads for a seamless user experience.
+- Display video ads with configurable **skip** and **exit** timers.
+- Interactive end‑card with a call‑to‑action button.
+- Built‑in event tracking: **view**, **click**, **skip**, **exit**.
+- Reward‑system hooks for incentivised ads.
+- Automatic lifecycle management (pause / resume tracking).
+
+### Server (flask‑ad‑server)
+- Advertiser & ad management endpoints.
+- Centralised event logging and daily aggregation.
+- Swagger‑generated API docs for easy exploration.
 
 ---
 
-## 📚 Documentation
-Full guides & API reference → **<https://nimib2.github.io/AdSDK/>**
+## Tech Stack
+- **Android SDK:** Java, Retrofit, Gson.
+- **Backend:** Python, Flask, MongoDB, Flasgger.
+- **Database:** MongoDB Atlas.
 
 ---
 
-## 📝 License
-```
-MIT License © 2025 Nimrod Bar
+## Android SDK – Quick Integration
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software … (standard MIT text, customise if needed)
-```
-```
+1. **Add the dependency** (to be published soon via GitHub Packages or JitPack).
+2. **Initialise the SDK** in your Application or first Activity:
+
+java
+AdSdk.init(context, new AdCallback() {
+    @Override
+    public void onAdAvailable(Ad ad) { /* handle available ad */ }
+    @Override
+    public void onAdFinished() { /* reward the user */ }
+    @Override
+    public void onNoAvailable(Ad ad) { /* handle no ad */ }
+    @Override
+    public void onError(String message) { /* handle errors */ }
+});
+
+
+3. **Show an ad** when ready:
+
+java
+if (AdSdk.isAdReady()) {
+    AdSdk.showAd(activity);
+}
+
+
+4. **Grant rewards** inside onAdFinished().
+
+---
+
+## License
+Copyright 2025 Nimrod Bar
+
+Licensed for use with the AdSDK Project (the "Software").
+
+You may use, modify, and distribute this Software for personal, academic, or commercial purposes, subject to the following conditions:
+
+- Retain this copyright notice and a copy of the license in all copies or substantial portions of the Software.
+- Do **not** create or distribute a competing advertising SDK or ad‑serving platform without prior written permission from the copyright holder.
+- The Software is provided **"AS IS"**, without warranty of any kind.
