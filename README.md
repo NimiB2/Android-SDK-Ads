@@ -17,6 +17,10 @@ Full guides and API reference are available at **[AdSDK Documentation](https://n
 
 <table>
   <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/4532ea8f-8649-4407-9acf-2eff2a21c572" width="150"/><br/>
+      <sub><b>Ad&nbsp;Integration&nbsp;Flow</b></sub>
+    </td>
     <td width="25"></td>  <!-- spacer -->
     <td align="center">
       <img src="https://github.com/user-attachments/assets/4f8bf291-5716-49d8-92ef-102c9d977545" width="150"/><br/>
