@@ -39,7 +39,7 @@ Full guides and API reference are available at **[AdSDK Documentation](https://n
 ## 🎥 Sample Video
 
 <video src="https://res.cloudinary.com/dyr4cxjrs/video/upload/v1745858282/AD-SDK_btcpu1.mp4"
-       width="480" controls>
+       width="200" controls>
   Your browser does not support the video tag.
 </video>
 
