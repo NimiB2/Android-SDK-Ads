@@ -19,12 +19,12 @@ Full guides and API reference are available at **[AdSDK Documentation](https://n
   <tr>
     <td width="25"></td>  <!-- spacer -->
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/4f8bf291-5716-49d8-92ef-102c9d977545" width="230"/><br/>
+      <img src="https://github.com/user-attachments/assets/4f8bf291-5716-49d8-92ef-102c9d977545" width="150"/><br/>
       <sub><b>SDK&nbsp;User&nbsp;Interface</b></sub>
     </td>
     <td width="25"></td>  <!-- spacer -->
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/0cceb809-3828-4f93-8983-4f6e6eebfff9" width="230"/><br/>
+      <img src="https://github.com/user-attachments/assets/0cceb809-3828-4f93-8983-4f6e6eebfff9" width="150"/><br/>
       <sub><b>End-Card&nbsp;Screen</b></sub>
     </td>
   </tr>
@@ -34,8 +34,7 @@ Full guides and API reference are available at **[AdSDK Documentation](https://n
 
 ## 🎥 Sample Video
 
-[![Watch&nbsp;demo](https://github.com/user-attachments/assets/4532ea8f-8649-4407-9acf-2eff2a21c572)](https://res.cloudinary.com/dyr4cxjrs/video/upload/v1745858282/AD-SDK_btcpu1.mp4)
-
+[<img src="https://github.com/user-attachments/assets/4532ea8f-8649-4407-9acf-2eff2a21c572" width="100"/>](https://res.cloudinary.com/dyr4cxjrs/video/upload/v1745858282/AD-SDK_btcpu1.mp4)
 
 
 ---
