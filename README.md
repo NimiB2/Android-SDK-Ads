@@ -2,15 +2,11 @@
 
 ## 🖼️ Screenshots
 
-### Ad Integration Flow
-<img src="https://github.com/user-attachments/assets/4532ea8f-8649-4407-9acf-2eff2a21c572" width="350"/>
-
-### SDK User Interface
-<img src="https://github.com/user-attachments/assets/4f8bf291-5716-49d8-92ef-102c9d977545" width="350"/>
-
-### Ad Playback Experience
-<img src="https://github.com/user-attachments/assets/0cceb809-3828-4f93-8983-4f6e6eebfff9" width="350"/>
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4532ea8f-8649-4407-9acf-2eff2a21c572" width="200"/>
+  <img src="https://github.com/user-attachments/assets/4f8bf291-5716-49d8-92ef-102c9d977545"  width="200"/>
+  <img src="https://github.com/user-attachments/assets/0cceb809-3828-4f93-8983-4f6e6eebfff9"  width="200"/>
+</p>
 
 ## Overview
 AdSDK is a powerful Android library designed to seamlessly integrate video advertisements into mobile applications with minimal development overhead.
