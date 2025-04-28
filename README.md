@@ -8,6 +8,14 @@ For advanced campaign management a companion Flask + MongoDB backend is avai
 
 ---
 
+### Project Architecture
+
+The Ad SDK system consists of several interconnected components that work together to deliver ads to mobile applications:
+
+<img src="https://github.com/user-attachments/assets/e4b1569d-e86d-41d7-a824-c2f7c30b42f0" width="150"/>
+
+---
+
 ## Documentation
 Full guides and API reference are available at **[AdSDK Documentation](https://nimib2.github.io/AdSDK/)**.
 
