@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Puzzle Quest</string>
+    <string name="title">PUZZLE QUEST</string>
+    <string name="start">WATCH AD FOR 100 COINS</string>
+    <string name="play_level">PLAY LEVEL</string>
+    <string name="daily_bonus">CLAIM DAILY BONUS</string>
+    <string name="loading_ad">LOADING AD…</string>
+    <string name="no_ads">NO ADS AVAILABLE</string>
+    <string name="retry_ad">RETRY AD</string>
+    <string name="no_lives">No lives remaining! Watch ad or wait</string>
+    <string name="level_starting">Starting level %1$d…</string>
+    <string name="daily_bonus_time">Daily bonus available in 23h 45m</string>
+    <string name="coins_reward">+100 coins for watching ad!</string>
+</resources>
