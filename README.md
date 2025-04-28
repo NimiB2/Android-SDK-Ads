@@ -3,15 +3,13 @@
 ## 🖼️ Screenshots
 
 ### Ad Integration Flow
-![Demo App](![צילום מסך 2025-04-28 183502](https://github.com/user-attachments/assets/4532ea8f-8649-4407-9acf-2eff2a21c572)
-)
+<img src="https://github.com/user-attachments/assets/4532ea8f-8649-4407-9acf-2eff2a21c572" width="350"/>
 
 ### SDK User Interface
-![Ad Playback](![צילום מסך 2025-04-28 183651](https://github.com/user-attachments/assets/4f8bf291-5716-49d8-92ef-102c9d977545))
-
+<img src="https://github.com/user-attachments/assets/4f8bf291-5716-49d8-92ef-102c9d977545" width="350"/>
 
 ### Ad Playback Experience
-![End-Card Screen](![צילום מסך 2025-04-28 183709](https://github.com/user-attachments/assets/0cceb809-3828-4f93-8983-4f6e6eebfff9))
+<img src="https://github.com/user-attachments/assets/0cceb809-3828-4f93-8983-4f6e6eebfff9" width="350"/>
 
 
 ## Overview
