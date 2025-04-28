@@ -34,7 +34,8 @@ Full guides and API reference are available at **[AdSDK Documentation](https://n
 
 ## 🎥 Sample Video
 
-[![Watch demo]<img src="https://github.com/user-attachments/assets/4532ea8f-8649-4407-9acf-2eff2a21c572" width="230"/>(https://res.cloudinary.com/dyr4cxjrs/video/upload/v1745858282/AD-SDK_btcpu1.mp4)
+[![Watch&nbsp;demo](https://github.com/user-attachments/assets/4532ea8f-8649-4407-9acf-2eff2a21c572)](https://res.cloudinary.com/dyr4cxjrs/video/upload/v1745858282/AD-SDK_btcpu1.mp4)
+
 
 
 ---
