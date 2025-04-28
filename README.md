@@ -17,10 +17,6 @@ Full guides and API reference are available at **[AdSDK Documentation](https://n
 
 <table>
   <tr>
-    <td align="center">
-      <img src="https://github.com/user-attachments/assets/4532ea8f-8649-4407-9acf-2eff2a21c572" width="230"/><br/>
-      <sub><b>Ad&nbsp;Integration&nbsp;Flow</b></sub>
-    </td>
     <td width="25"></td>  <!-- spacer -->
     <td align="center">
       <img src="https://github.com/user-attachments/assets/4f8bf291-5716-49d8-92ef-102c9d977545" width="230"/><br/>
@@ -38,7 +34,7 @@ Full guides and API reference are available at **[AdSDK Documentation](https://n
 
 ## 🎥 Sample Video
 
-[![Watch demo](https://raw.githubusercontent.com/<user>/<repo>/main/demo-thumb.png)](https://res.cloudinary.com/dyr4cxjrs/video/upload/v1745858282/AD-SDK_btcpu1.mp4)
+[![Watch demo]<img src="https://github.com/user-attachments/assets/4532ea8f-8649-4407-9acf-2eff2a21c572" width="230"/>(https://res.cloudinary.com/dyr4cxjrs/video/upload/v1745858282/AD-SDK_btcpu1.mp4)
 
 
 ---
