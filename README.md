@@ -99,12 +99,15 @@ if (AdSdk.isAdReady()) {
 ---
 
 ## License
-Copyright 2025 Nimrod Bar
 
-Licensed for use with the AdSDK Project (the "Software").
+MIT License - Copyright © 2025 Nimrod Bar
 
-You may use, modify, and distribute this Software for personal, academic, or commercial purposes, subject to the following conditions:
+This study project is created for educational purposes only. Demo content is not for commercial use.
 
-- Retain this copyright notice and a copy of the license in all copies or substantial portions of the Software.
-- Do **not** create or distribute a competing advertising SDK or ad‑serving platform without prior written permission from the copyright holder.
-- The Software is provided **"AS IS"**, without warranty of any kind.
+Permission is granted to use, copy, modify, and distribute this software subject to including the above copyright notice and permission notice in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
+
+[Full license](https://opensource.org/licenses/MIT)
+
+---
