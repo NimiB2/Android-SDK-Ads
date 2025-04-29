@@ -174,7 +174,7 @@ public class AdPlayerActivity extends AppCompatActivity {
         if (endCardView == null || ad == null) return;
 
         // Dim the video
-        videoView.animate().alpha(0.2f).setDuration(400).start();
+        videoView.animate().alpha(0.5f).setDuration(400).start();
 
         // Show end card
         endCardView.setAlpha(0f);
