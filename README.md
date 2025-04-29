@@ -41,7 +41,6 @@ Full guides and API reference are available at **[AdSDK Documentation](https://n
 
 
 
----
 
 ## Features
 
