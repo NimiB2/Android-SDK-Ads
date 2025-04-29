@@ -40,6 +40,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    implementation(project(":adsdk_lib"))
-
+//    implementation(project(":adsdk_lib"))
+    implementation (libs.android.sdk.ads)
 }
