@@ -13,7 +13,7 @@ Full guides and API reference are available at **[AdSDK Documentation](https://n
 
 ---
 
-## 📸 Screenshots
+## 📸 Screenshots & Video
 
 <table>
   <tr>
@@ -34,7 +34,7 @@ Full guides and API reference are available at **[AdSDK Documentation](https://n
   </tr>
 </table>
 
----
+
 
 ##  [🎥 Sample Video](https://res.cloudinary.com/dyr4cxjrs/video/upload/v1745858282/AD-SDK_btcpu1.mp4)
 
