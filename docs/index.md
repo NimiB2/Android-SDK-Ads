@@ -10,6 +10,19 @@ nav_order: 1
 
 AdSDK is an Android library that enables developers to easily integrate video advertisements into their applications. This SDK handles ad loading, display, and event tracking with a simple interface.
 
+---
+
+### Project Architecture
+
+The Ad SDK system consists of several interconnected components that work together to deliver ads to mobile applications:
+
+
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/e4b1569d-e86d-41d7-a824-c2f7c30b42f0" alt="Project Image"/>
+</div>
+
+---
+
 ## Documentation Sections
 
 - [Getting Started](getting-started.md) - Quick installation and initialization
