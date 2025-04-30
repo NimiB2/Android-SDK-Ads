@@ -1,8 +1,16 @@
 title: AdSDK Documentation
 description: Documentation for the AdSDK video advertising platform
-theme: jekyll-theme-cayman
+remote_theme: pmarsceill/just-the-docs
+color_scheme: light
 
-# Navigation structure (this preserves your existing document structure)
+# Enable search
+search_enabled: true
+
+# Aux links for the upper right navigation
 aux_links:
   "AdSDK on GitHub":
     - "https://github.com/NimiB2/Android-SDK-Ads"
+
+# Back to top link
+back_to_top: true
+back_to_top_text: "Back to top"
