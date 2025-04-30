@@ -45,4 +45,4 @@ The `dev.nimrod.adsdk_lib.ui.AdPlayerActivity` handles video playback and user i
 
 ## Related Documentation
 
-For the server-side components that power this SDK, see the [Flask Ad Server Documentation](https://github.com/NimiB2/ad-server-repo).
+For the server-side components that power this SDK, see the [Flask Ad Server Documentation](https://nimib2.github.io/Ad-Server/).
