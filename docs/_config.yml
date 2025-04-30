@@ -1,6 +1,6 @@
-remote_theme: tomjoht/documentation-theme-jekyll
+remote_theme: sighingnow/jekyll-gitbook
 # OR if you prefer using the gem
-# theme: documentation-theme-jekyll
+# theme: jekyll-gitbook
 
 title: AdSDK Documentation
 description: Documentation for the AdSDK video advertising platform
