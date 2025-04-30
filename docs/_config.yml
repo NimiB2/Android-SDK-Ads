@@ -1,16 +1,6 @@
-remote_theme: mmistakes/minimal-mistakes
+remote_theme: hydecorp/hydejack@v9
 # OR if you prefer using the gem
-# theme: minimal-mistakes-jekyll
+# theme: jekyll-theme-hydejack
 
 title: AdSDK Documentation
 description: Documentation for the AdSDK video advertising platform
-
-# Navigation
-defaults:
-  # _docs
-  - scope:
-      path: ""
-      type: docs
-    values:
-      sidebar:
-        nav: "docs"
