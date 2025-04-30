@@ -18,7 +18,7 @@ The Ad SDK system consists of several interconnected components that work togeth
 
 
 <div align="center">
-  <img src="https://github.com/NimiB2/Android-SDK-Ads/blob/main/docs/assets/architecture-diagram.jpg"
+  <img src="https://raw.githubusercontent.com/NimiB2/Android-SDK-Ads/main/docs/assets/architecture-diagram.jpg"
        alt="Project Architecture Diagram" width="600"/>
 </div>
 
