@@ -1,3 +1,8 @@
+---
+layout: default
+title: Getting Started
+nav_order: 2
+---
 # Getting Started with AdSDK
 
 This guide provides a quick introduction to installing and using the AdSDK in your Android application.
