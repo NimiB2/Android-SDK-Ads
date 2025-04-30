@@ -11,7 +11,7 @@ This section contains documentation related to the Flask Ad Server, which powers
 
 ## Server Repository
 
-The complete server code is available in the [Flask Ad Server Repository](https://github.com/NimiB2/Ad-Server).
+The complete server code is available in the [Flask Ad Server Repository](https://nimib2.github.io/Ad-Server/).
 
 ## Server Overview
 
