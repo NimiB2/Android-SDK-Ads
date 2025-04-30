@@ -25,9 +25,9 @@ It exposes endpoints for advertisers to upload creatives and for the SDK to requ
 
 ## Documentation Sections
 
-- [Server Setup](server-setup.md) - Installation and deployment guide
-- [API Reference](api-reference.md) - Complete endpoint documentation
-- [Database Schema](database-schema.md) - MongoDB collections and structure
-- [Event Tracking](event-tracking.md) - How ad events are processed
-- [Analytics](analytics.md) - Statistics and reporting
-- [SDK Support](sdk-support.md) - How the server supports the Android SDK
+- [API Reference](https://nimib2.github.io/Ad-Server/api-reference.html) - Complete endpoint documentation
+- [Database Schema](https://nimib2.github.io/Ad-Server/database-schema.html) - MongoDB collections and structure
+- [Event Tracking](https://nimib2.github.io/Ad-Server/event-tracking.html) - How ad events are processed
+- [Analytics](https://nimib2.github.io/Ad-Server/analytics.html) - Statistics and reporting
+- [SDK Support](https://nimib2.github.io/Ad-Server/sdk-support.html) - How the server supports the Android SDK
+- [Server Setup](https://nimib2.github.io/Ad-Server/server-setup.html) - Installation and deployment guide
