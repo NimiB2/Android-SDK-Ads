@@ -1,3 +1,8 @@
+---
+layout: default
+title: Ad Lifecycle
+nav_order: 5
+---
 # Ad Lifecycle
 
 This document explains how ads are managed throughout their lifecycle in the AdSDK, from initialization to display and event tracking.
