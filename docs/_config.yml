@@ -1,16 +1,12 @@
-remote_theme: mmistakes/minimal-mistakes
+remote_theme: pmarsceill/just-the-docs
 # OR if you prefer using the gem
-# theme: minimal-mistakes-jekyll
+# theme: just-the-docs
 
 title: AdSDK Documentation
 description: Documentation for the AdSDK video advertising platform
 
-# Navigation
-defaults:
-  # _docs
-  - scope:
-      path: ""
-      type: docs
-    values:
-      sidebar:
-        nav: "docs"
+# Navigation configuration
+search_enabled: true
+aux_links:
+  "AdSDK on GitHub":
+    - "https://github.com/NimiB2/Android-SDK-Ads"
