@@ -1,3 +1,8 @@
+---
+layout: default
+title: Backend Connection
+nav_order: 6
+---
 # Backend Connection
 
 This document explains how the AdSDK communicates with the Flask Ad Server backend.
