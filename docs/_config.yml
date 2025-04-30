@@ -1,0 +1,9 @@
+remote_theme: pmarsceill/just-the-docs
+title: AdSDK Documentation
+description: Documentation for the AdSDK Android library and Flask server
+color_scheme: light
+
+# Navigation structure (this preserves your existing document structure)
+aux_links:
+  "AdSDK on GitHub":
+    - "https://github.com/NimiB2/Android-SDK-Ads"
