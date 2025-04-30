@@ -1,3 +1,8 @@
+---
+layout: default
+title: Callbacks
+nav_order: 4
+---
 # AdCallback Interface
 
 The `AdCallback` interface is the primary way your application receives notifications about ad events. This document explains each callback method and how to implement them effectively.
