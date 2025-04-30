@@ -1,6 +1,16 @@
-remote_theme: sighingnow/jekyll-gitbook
+remote_theme: mmistakes/minimal-mistakes
 # OR if you prefer using the gem
-# theme: jekyll-gitbook
+# theme: minimal-mistakes-jekyll
 
 title: AdSDK Documentation
 description: Documentation for the AdSDK video advertising platform
+
+# Navigation
+defaults:
+  # _docs
+  - scope:
+      path: ""
+      type: docs
+    values:
+      sidebar:
+        nav: "docs"
