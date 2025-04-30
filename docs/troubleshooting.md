@@ -1,3 +1,8 @@
+---
+layout: default
+title: Troubleshooting
+nav_order: 7
+---
 # Troubleshooting
 
 This guide addresses common issues you might encounter when integrating and using the AdSDK, along with their solutions.
