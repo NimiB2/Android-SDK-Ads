@@ -1,3 +1,8 @@
+---
+layout: default
+title: Integration Guide
+nav_order: 3
+---
 # AdSDK Integration Guide
 
 This guide explains how to integrate the AdSDK into your Android application.
