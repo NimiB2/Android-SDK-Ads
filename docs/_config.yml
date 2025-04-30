@@ -1,6 +1,6 @@
-remote_theme: hydecorp/hydejack@v9
+remote_theme: tomjoht/documentation-theme-jekyll
 # OR if you prefer using the gem
-# theme: jekyll-theme-hydejack
+# theme: documentation-theme-jekyll
 
 title: AdSDK Documentation
 description: Documentation for the AdSDK video advertising platform
