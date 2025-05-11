@@ -23,7 +23,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class AdController {
     private static final String TAG = "AdController";
     private static final String BASE_URL = "https://ad-server-kappa.vercel.app/";
-
     private Ad currentAd;
 
     private static AdController instance;
