@@ -216,10 +216,8 @@ public class AdPlayerActivity extends AppCompatActivity {
 
             skipButton.setOnClickListener(v -> {
                 skipped = true;
-                if (!eventSent) {
-                    adManager.createEvent(EventEnum.SKIP);
-                    eventSent = true;
-                }
+                adManager.createEvent(EventEnum.SKIP);
+                eventSent = true;
                 adManager.notifyAdSkipped();
                 finish();
             });
