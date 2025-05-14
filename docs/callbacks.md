@@ -1,6 +1,3 @@
-Here's the complete updated callbacks.md document:
-
-```markdown
 ---
 layout: default
 title: Callbacks
@@ -383,4 +380,3 @@ Callbacks are delivered on the main thread, so it's safe to update UI directly f
 
 - [Integration Guide](integration-guide.md) for overall SDK setup
 - [Ad Lifecycle](ad-lifecycle.md) for understanding the complete ad flow
-```
