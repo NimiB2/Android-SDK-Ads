@@ -1,2 +1,4 @@
 jdk:
   - openjdk17
+install:
+  - ./gradlew :adsdk_lib:clean :adsdk_lib:assembleRelease :adsdk_lib:publishToMavenLocal
