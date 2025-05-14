@@ -81,6 +81,7 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
 
     // Rest API calls
+    api(libs.gson)
     api(libs.retrofit)
     api(libs.converter.gson)
 }
