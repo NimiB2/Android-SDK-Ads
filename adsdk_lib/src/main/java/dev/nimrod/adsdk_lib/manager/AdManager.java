@@ -74,9 +74,23 @@ public class AdManager {
             }
 
             @Override
+            public void onAdExited() {
+                if (callback != null) {
+                    callback.onAdExited();
+                }
+            }
+
+            @Override
             public void onAdFinished() {
                 if (callback != null) {
                     callback.onAdFinished();
+                }
+            }
+
+            @Override
+            public void onAdSkipped() {
+                if (callback != null) {
+                    callback.onAdSkipped();
                 }
             }
 
@@ -100,6 +114,20 @@ public class AdManager {
 
     public Ad getCurrentAd() {
         return currentAd;
+    }
+
+    public void notifyAdSkipped() {
+        if (userCallback != null) {
+            userCallback.onAdSkipped();
+        }
+        currentAd = null;
+    }
+
+    public void notifyAdExited() {
+        if (userCallback != null) {
+            userCallback.onAdExited();
+        }
+        currentAd = null;
     }
 
     public void checkAdDisplay(Activity activity) {

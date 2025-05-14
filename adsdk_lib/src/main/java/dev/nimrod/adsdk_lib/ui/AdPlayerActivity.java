@@ -99,6 +99,7 @@ public class AdPlayerActivity extends AppCompatActivity {
                 videoView.setOnCompletionListener(mp -> {
                     videoCompleted = true;
                     adManager.createEvent(EventEnum.VIEW);
+                    adManager.notifyAdFinished();
                     showEndCard();
                 });
 
@@ -219,6 +220,7 @@ public class AdPlayerActivity extends AppCompatActivity {
                     adManager.createEvent(EventEnum.SKIP);
                     eventSent = true;
                 }
+                adManager.notifyAdSkipped();
                 finish();
             });
         }
@@ -237,6 +239,7 @@ public class AdPlayerActivity extends AppCompatActivity {
                 if (!videoCompleted) {
                     adManager.createEvent(EventEnum.EXIT);
                 }
+                adManager.notifyAdExited();
                 finish();
             });
         }
@@ -276,7 +279,7 @@ public class AdPlayerActivity extends AppCompatActivity {
                 adManager.createEvent(EventEnum.EXIT);
                 eventSent = true;
             }
-            adManager.notifyAdFinished();
+            adManager.notifyAdExited();
         }
     }
 

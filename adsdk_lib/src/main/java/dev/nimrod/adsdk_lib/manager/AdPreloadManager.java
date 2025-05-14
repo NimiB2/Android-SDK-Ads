@@ -68,6 +68,16 @@ public class AdPreloadManager {
             }
 
             @Override
+            public void onAdSkipped() {
+                isLoading = false;
+            }
+
+            @Override
+            public void onAdExited() {
+                isLoading = false;
+            }
+
+            @Override
             public void onNoAvailable(Ad ad) {
                 Log.d(TAG, "No ad available for preloading");
                 isLoading = false;

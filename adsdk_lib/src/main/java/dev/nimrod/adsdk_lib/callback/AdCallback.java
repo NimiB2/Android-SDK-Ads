@@ -6,6 +6,8 @@ import dev.nimrod.adsdk_lib.model.Event;
 public interface AdCallback {
     void onAdAvailable(Ad ad);
     void onAdFinished();
+    void onAdSkipped();
+    void onAdExited();
     void onNoAvailable(Ad ad);
     void onError(String message);
 
