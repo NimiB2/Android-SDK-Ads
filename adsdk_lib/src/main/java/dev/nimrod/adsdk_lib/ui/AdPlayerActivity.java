@@ -239,6 +239,7 @@ public class AdPlayerActivity extends AppCompatActivity {
                 if (!videoCompleted) {
                     adManager.createEvent(EventEnum.EXIT);
                 }
+                eventSent = true;
                 adManager.notifyAdExited();
                 finish();
             });
@@ -269,16 +270,13 @@ public class AdPlayerActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
 
-        // Clean up video view
         if (videoView != null) {
             videoView.stopPlayback();
         }
 
-        if (!videoCompleted && ad != null) {
-            if (!eventSent) {
-                adManager.createEvent(EventEnum.EXIT);
-                eventSent = true;
-            }
+        // Only send exit event if no other event was sent (back button, etc)
+        if (!eventSent && !videoCompleted && ad != null) {
+            adManager.createEvent(EventEnum.EXIT);
             adManager.notifyAdExited();
         }
     }

@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements AdCallback {
         initViews();
         initButtons();
 
-        loadAd();
+//        loadAd();
     }
 
     private void findViews() {
@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements AdCallback {
         main_BTN_showAdButton.setText("WATCH AD FOR 100 COINS");
         Log.d(TAG, "Requesting new ad");
         Log.d(TAG, "Initializing AdSdk with package 222: " + getPackageName());
-        AdSdk.init(this,this);
+//        AdSdk.init(this,this);
 
     }
 
@@ -155,6 +155,26 @@ public class MainActivity extends AppCompatActivity implements AdCallback {
         giveReward();
 
         // Preload next ad
+        isAdReady = false;
+        loadAd();
+    }
+
+    @Override
+    public void onAdSkipped() {
+        Log.d(TAG, "Ad was skipped");
+        Toast.makeText(this, "Ad skipped - no reward", Toast.LENGTH_SHORT).show();
+        // No reward given for skip
+        isAdReady = false;
+        loadAd();
+    }
+
+    @Override
+    public void onAdExited() {
+        Log.d(TAG, "Ad was exited");
+        Toast.makeText(this, "Ad exited - partial reward", Toast.LENGTH_SHORT).show();
+        // Give partial reward for exit if desired
+        coinsCount += 50; // Half reward
+        updateStats();
         isAdReady = false;
         loadAd();
     }
