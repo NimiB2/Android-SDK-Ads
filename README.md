@@ -13,6 +13,13 @@ Full guides and API reference are available at **[AdSDK Documentation](https://n
 
 ---
 
+## Demo SDK Video
+
+[![AdSDK Platform Demo](https://res.cloudinary.com/dyr4cxjrs/video/upload/c_fill,h_400,w_700,q_auto,f_jpg/v1747338275/AdSdkPlatform_vufnvs.jpg)](https://res.cloudinary.com/dyr4cxjrs/video/upload/v1747338275/AdSdkPlatform_vufnvs.mp4)
+
+---
+
+
 ## 📸 Screenshots & Video
 
 <table>
