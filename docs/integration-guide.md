@@ -20,9 +20,7 @@ Add the AdSDK to your project by including the library dependency in your app's 
 
 ```kotlin
 dependencies {
-    implementation("dev.nimrod:adsdk-lib:1.0.7")
-    // or if using JitPack
-    implementation("com.github.NimiB2:Android-SDK-Ads:1.0.7")
+    implementation("com.github.NimiB2:Android-SDK-Ads:1.0.8")
 }
 ```
 
