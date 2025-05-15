@@ -13,9 +13,11 @@ Full guides and API reference are available at **[AdSDK Documentation](https://n
 
 ---
 
-## Demo SDK Video
+## 📱 AdSDK – Watch How It Works
 
-[![AdSDK Platform Demo](https://res.cloudinary.com/dyr4cxjrs/video/upload/c_fill,h_400,w_700,q_auto,f_jpg/v1747338275/AdSdkPlatform_vufnvs.jpg)](https://www.kapwing.com/videos/68264cf77eecde027c279537)
+[![Watch the AdSDK Demo](https://res.cloudinary.com/dyr4cxjrs/image/upload/v1747399999/new_thumbnail.jpg)](https://www.kapwing.com/videos/68264cf77eecde027c279537)
+
+A short video that explains and demonstrates how the AdSDK platform works – from creating ad campaigns to analyzing user engagement.
 
 ---
 
