@@ -98,8 +98,8 @@ public class AdPlayerActivity extends AppCompatActivity {
                 // Set completion listener
                 videoView.setOnCompletionListener(mp -> {
                     videoCompleted = true;
-                    adManager.createEvent(EventEnum.VIEW);
-                    adManager.notifyAdFinished();
+//                    adManager.createEvent(EventEnum.VIEW);
+//                    adManager.notifyAdFinished();
                     showEndCard();
                 });
 
@@ -234,10 +234,14 @@ public class AdPlayerActivity extends AppCompatActivity {
 
 
             exitButton.setOnClickListener(v -> {
-                if (!videoCompleted) {
-                    adManager.createEvent(EventEnum.EXIT);
+                if (!eventSent) {
+                    if (videoCompleted) {
+                        adManager.createEvent(EventEnum.VIEW);  // Send VIEW when exiting after completion
+                    } else {
+                        adManager.createEvent(EventEnum.EXIT);  // Send EXIT if not completed
+                    }
+                    eventSent = true;
                 }
-                eventSent = true;
                 adManager.notifyAdExited();
                 finish();
             });
@@ -272,10 +276,14 @@ public class AdPlayerActivity extends AppCompatActivity {
             videoView.stopPlayback();
         }
 
-        // Only send exit event if no other event was sent (back button, etc)
-        if (!eventSent && !videoCompleted && ad != null) {
-            adManager.createEvent(EventEnum.EXIT);
-            adManager.notifyAdExited();
+        if (!eventSent && ad != null) {
+            if(!videoCompleted){
+                adManager.createEvent(EventEnum.EXIT);
+                adManager.notifyAdExited();
+            } else{
+                adManager.createEvent(EventEnum.VIEW);
+                adManager.notifyAdFinished();
+            }
         }
     }
 
