@@ -68,7 +68,12 @@ Full guides and API reference are available at **[AdSDK Documentation](https://n
 
 ## Android SDK – Quick Integration
 
-1. **Add the dependency** (to be published soon via GitHub Packages or JitPack).
+1. **Add the dependency**:
+```kotlin
+dependencies {
+    implementation("com.github.NimiB2:Android-SDK-Ads:1.0.7")
+}
+```
 2. **Initialise the SDK** in your Application or first Activity:
 
 java

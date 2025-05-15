@@ -20,9 +20,9 @@ Add the AdSDK to your project by including the library dependency in your app's 
 
 ```kotlin
 dependencies {
-    implementation("dev.nimrod:adsdk-lib:1.0.0")
+    implementation("dev.nimrod:adsdk-lib:1.0.7")
     // or if using JitPack
-    implementation("com.github.NimiB2:Android-SDK-Ads:1.0.0")
+    implementation("com.github.NimiB2:Android-SDK-Ads:1.0.7")
 }
 ```
 
@@ -57,6 +57,18 @@ AdSdk.init(this, new AdCallback() {
         // User finished watching the ad
         Log.d(TAG, "Ad playback finished");
         // Give reward to the user
+    }
+
+    @Override
+    public void onAdSkipped() {
+        Log.d(TAG, "Ad skipped");
+        Toast.makeText(this, "Ad skipped - no reward", Toast.LENGTH_SHORT).show();
+    }
+    
+    @Override
+    public void onAdExited() {
+        Log.d(TAG, "Ad exited");
+        Toast.makeText(this, "Ad exited early", Toast.LENGTH_SHORT).show();
     }
 
     @Override

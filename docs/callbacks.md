@@ -15,6 +15,8 @@ The `AdCallback` interface is defined in `dev.nimrod.adsdk_lib.callback.AdCallba
 public interface AdCallback {
     void onAdAvailable(Ad ad);
     void onAdFinished();
+    void onAdSkipped();
+    void onAdExited();
     void onNoAvailable(Ad ad);
     void onError(String message);
 }
@@ -55,11 +57,11 @@ public void onAdAvailable(Ad ad) {
 
 ### onAdFinished()
 
-This callback is invoked when the user finishes watching an ad, regardless of how they finished (view completion, click, skip, or exit).
+This callback is invoked when the user finishes watching an ad completely (watched to the end).
 
 **When it's called:**
-- After an ad display session completes
-- When `AdPlayerActivity` finishes and returns to your app
+- After an ad completes naturally (reaches the end)
+- When the user interacts with the end card
 
 **Implementation example:**
 ```java
@@ -67,7 +69,7 @@ This callback is invoked when the user finishes watching an ad, regardless of ho
 public void onAdFinished() {
     Log.d(TAG, "Ad playback finished");
 
-    // Give reward when ad finishes
+    // Give full reward when ad finishes
     giveReward();
 
     // Preload next ad
@@ -83,9 +85,66 @@ private void giveReward() {
 ```
 
 **Best practices:**
-- Always provide rewards in this callback
+- Always provide full rewards in this callback
 - Preload the next ad to ensure a smooth user experience
 - Update your UI to reflect new rewards or state
+
+### onAdSkipped()
+
+This callback is invoked when the user clicks the skip button during ad playback.
+
+**When it's called:**
+- User clicks the skip button after it becomes available
+- The ad was not watched to completion
+
+**Implementation example:**
+```java
+@Override
+public void onAdSkipped() {
+    Log.d(TAG, "Ad was skipped");
+    Toast.makeText(this, "Ad skipped - no reward", Toast.LENGTH_SHORT).show();
+    
+    // No reward given for skip
+    isAdReady = false;
+    loadAd();
+}
+```
+
+**Best practices:**
+- Don't provide rewards for skipped ads
+- Consider implementing a cool-down period before the next ad
+- Track skip rates for analytics
+- Distinguish between skip and exit events
+
+### onAdExited()
+
+This callback is invoked when the user exits the ad using the exit button.
+
+**When it's called:**
+- User clicks the exit button after it becomes available
+- The ad was partially watched but not completed
+- User exits via back button or other means
+
+**Implementation example:**
+```java
+@Override
+public void onAdExited() {
+    Log.d(TAG, "Ad was exited");
+    Toast.makeText(this, "Ad exited - partial reward", Toast.LENGTH_SHORT).show();
+    
+    // Give partial reward for exit if desired
+    coinsCount += 50; // Half reward
+    updateStats();
+    isAdReady = false;
+    loadAd();
+}
+```
+
+**Best practices:**
+- Consider partial rewards for exit events
+- Track exit rates to optimize ad timing
+- Distinguish between exit and skip in your analytics
+- Update UI to reflect any partial rewards
 
 ### onNoAvailable(Ad ad)
 
@@ -183,6 +242,16 @@ public class MainActivity extends AppCompatActivity implements AdCallback {
     }
     
     @Override
+    public void onAdSkipped() {
+        // Handle ad skipped
+    }
+    
+    @Override
+    public void onAdExited() {
+        // Handle ad exited
+    }
+    
+    @Override
     public void onNoAvailable(Ad ad) {
         // Handle no ad available
     }
@@ -208,6 +277,16 @@ AdSdk.init(this, new AdCallback() {
     @Override
     public void onAdFinished() {
         // Handle ad finished
+    }
+    
+    @Override
+    public void onAdSkipped() {
+        // Handle ad skipped
+    }
+    
+    @Override
+    public void onAdExited() {
+        // Handle ad exited
     }
     
     @Override
@@ -264,7 +343,19 @@ public class AdManager implements AdCallback {
     @Override
     public void onAdFinished() {
         isAdReady = false;
-        // Additional handling
+        // Additional handling - give full reward
+    }
+    
+    @Override
+    public void onAdSkipped() {
+        isAdReady = false;
+        // Additional handling - no reward
+    }
+    
+    @Override
+    public void onAdExited() {
+        isAdReady = false;
+        // Additional handling - partial reward
     }
     
     @Override
