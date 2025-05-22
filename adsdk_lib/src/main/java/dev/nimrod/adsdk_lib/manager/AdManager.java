@@ -63,6 +63,7 @@ public class AdManager {
     public void initAd(Context context, AdCallback callback) {
         Log.d(TAG, "initAd called");
         this.userCallback = callback;
+        preloadManager.setNotificationCallback(callback);
 
         // Check if a preloaded ad is available
         if (preloadManager.hasPreloadedAd()) {
@@ -159,7 +160,8 @@ public class AdManager {
             preloadManager.preloadNextAd();
 
         } else {
-            Log.e(TAG, "Cannot display ad: no ad loaded");
+            Log.d(TAG, "No ad available, triggering preload");
+            preloadManager.preloadNextAd();
         }
     }
 

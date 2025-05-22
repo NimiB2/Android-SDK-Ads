@@ -12,6 +12,8 @@ import dev.nimrod.adsdk_lib.model.Ad;
  */
 public class AdPreloadManager {
     private static final String TAG = "AdPreloadManager";
+    private AdCallback notificationCallback;
+
     private static AdPreloadManager instance;
     private final AdController adController;
 
@@ -34,6 +36,10 @@ public class AdPreloadManager {
     public void initialize(String packageName) {
         this.packageName = packageName;
         preloadNextAd();
+    }
+
+    public void setNotificationCallback(AdCallback notificationCallback) {
+        this.notificationCallback = notificationCallback;
     }
 
     public boolean hasPreloadedAd() {
@@ -71,6 +77,10 @@ public class AdPreloadManager {
                 Log.d(TAG, "Ad successfully preloaded: " + ad.getId());
                 preloadedAd = ad;
                 isLoading = false;
+
+                if (notificationCallback != null) {
+                    notificationCallback.onAdAvailable(ad);
+                }
             }
 
             @Override
