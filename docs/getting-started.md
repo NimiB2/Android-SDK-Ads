@@ -28,7 +28,7 @@ Add the AdSDK to your app's `build.gradle.kts` file:
 
 ```kotlin
 dependencies {
-    implementation("com.github.NimiB2:Android-SDK-Ads:1.0.8")
+    implementation("com.github.NimiB2:video-ad-sdk-android:1.0.11")
 }
 ```
 
