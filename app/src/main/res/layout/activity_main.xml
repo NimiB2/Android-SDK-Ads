@@ -35,8 +35,8 @@
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/dollar"
-                    android:contentDescription="Coins" />
+                    android:contentDescription="Coins"
+                    android:src="@drawable/dollar" />
 
                 <TextView
                     android:id="@+id/main_TXT_coins"
@@ -59,8 +59,8 @@
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/diamond"
-                    android:contentDescription="Gems" />
+                    android:contentDescription="Gems"
+                    android:src="@drawable/diamond" />
 
                 <TextView
                     android:id="@+id/main_TXT_gems"
@@ -83,8 +83,8 @@
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/heart"
-                    android:contentDescription="Lives" />
+                    android:contentDescription="Lives"
+                    android:src="@drawable/heart" />
 
                 <TextView
                     android:id="@+id/main_TXT_lives"
@@ -105,14 +105,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-condensed"
-        android:text="PUZZLE QUEST"
-        android:textColor="#FFFFFF"
-        android:textSize="32sp"
-        android:textStyle="bold"
         android:shadowColor="#000000"
         android:shadowDx="2"
         android:shadowDy="2"
         android:shadowRadius="3"
+        android:text="PUZZLE QUEST"
+        android:textColor="#FFFFFF"
+        android:textSize="32sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topStatsBar" />
@@ -122,8 +122,8 @@
         android:id="@+id/main_IMG_puzzle"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@drawable/puzzle"
         android:contentDescription="Puzzle Game"
+        android:src="@drawable/puzzle"
         app:layout_constraintBottom_toTopOf="@+id/main_LT_buttons"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -26,6 +26,11 @@ import dev.nimrod.adsdk_lib.R;
 import dev.nimrod.adsdk_lib.manager.AdManager;
 import dev.nimrod.adsdk_lib.model.Ad;
 
+/**
+ * Full-screen activity for displaying video advertisements.
+ * Handles video playback, user interactions, event tracking, and lifecycle management.
+ * Supports skip/exit buttons with configurable timing and displays end cards with call-to-action.
+ */
 public class AdPlayerActivity extends AppCompatActivity {
     private static final String TAG = "AdPlayerActivity";
 
@@ -61,26 +66,40 @@ public class AdPlayerActivity extends AppCompatActivity {
             return insets;
         });
 
-        // Find views
+        findViews();
+        initializeAdFlow();
+
+    }
+
+    private void findViews() {
         videoView = findViewById(R.id.ad_player_video);
         videoContainer = findViewById(R.id.video_container);
         skipButton = findViewById(R.id.ad_player_skip_button);
         exitButton = findViewById(R.id.ad_player_exit_button);
         loadingProgressBar = findViewById(R.id.ad_player_loading);
         endCardView = findViewById(R.id.ad_end_card);
-        endCardView.setVisibility(View.GONE);
+    }
 
+    private void initializeAdFlow() {
+        hideEndCard();
+        loadCurrentAd();
+        handleAd();
+    }
+
+    private void hideEndCard() {
+        endCardView.setVisibility(View.GONE);
+    }
+
+    private void loadCurrentAd() {
         // Get AdManager instance
         adManager = AdManager.getInstance();
-
         // Get ad from AdManager
         ad = adManager.getCurrentAd();
+    }
 
+    private void handleAd() {
         if (ad != null) {
-            // Log the ad info
-            Log.d(TAG, "Ad displayed in AdPlayerActivity: " + (ad.getId() != null ? ad.getId() : "N/A"));
-
-            // Setup the video player and buttons
+            logAdInfo();
             setupVideoPlayer();
             setupButtons();
         } else {
@@ -89,6 +108,15 @@ public class AdPlayerActivity extends AppCompatActivity {
         }
     }
 
+    private void logAdInfo() {
+        String adId = ad.getId() != null ? ad.getId() : "N/A";
+        Log.d(TAG, "Ad displayed in AdPlayerActivity: " + adId);
+    }
+
+    /**
+     * Configures the video player with proper scaling, event listeners, and timing controls.
+     * Handles video preparation, playback start, error handling, and button timing.
+     */
     private void setupVideoPlayer() {
         if (videoView != null && ad.getVideoUrl() != null) {
             try {
@@ -98,8 +126,6 @@ public class AdPlayerActivity extends AppCompatActivity {
                 // Set completion listener
                 videoView.setOnCompletionListener(mp -> {
                     videoCompleted = true;
-//                    adManager.createEvent(EventEnum.VIEW);
-//                    adManager.notifyAdFinished();
                     showEndCard();
                 });
 
@@ -171,6 +197,11 @@ public class AdPlayerActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Displays the end card overlay after video completion.
+     * Shows advertiser information and call-to-action button, dims the video background.
+     */
+
     private void showEndCard() {
         if (endCardView == null || ad == null) return;
 
@@ -204,6 +235,11 @@ public class AdPlayerActivity extends AppCompatActivity {
         exitButton.invalidate();
     }
 
+    /**
+     * Configures skip and exit buttons with timing based on ad settings.
+     * Skip button appears after skipTime, exit button appears after exitTime.
+     * Handles event tracking for user interactions.
+     */
     private void setupButtons() {
         // Skip button
         if (skipButton != null) {
@@ -248,6 +284,17 @@ public class AdPlayerActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Launches the ad player activity.
+     *
+     * @param host      The activity to launch from
+     * @param adManager The ad manager instance (parameter retained for interface consistency)
+     */
+    public static void start(Activity host, AdManager adManager) {
+        Intent intent = new Intent(host, AdPlayerActivity.class);
+        host.startActivity(intent);
+    }
+
     @Override
     protected void onPause() {
         super.onPause();
@@ -277,19 +324,13 @@ public class AdPlayerActivity extends AppCompatActivity {
         }
 
         if (!eventSent && ad != null) {
-            if(!videoCompleted){
+            if (!videoCompleted) {
                 adManager.createEvent(EventEnum.EXIT);
                 adManager.notifyAdExited();
-            } else{
+            } else {
                 adManager.createEvent(EventEnum.VIEW);
                 adManager.notifyAdFinished();
             }
         }
-    }
-
-    // Start activity with AdManager
-    public static void start(Activity host, AdManager adManager) {
-        Intent intent = new Intent(host, AdPlayerActivity.class);
-        host.startActivity(intent);
     }
 }

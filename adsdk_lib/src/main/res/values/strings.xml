@@ -1,1 +1,6 @@
-<resources></resources>
+<resources>
+    <string name="skip">Skip</string>
+    <string name="exit">Exit</string>
+    <string name="learn_more">Learn More</string>
+    <string name="sponsored_by">Sponsored by</string>
+</resources>

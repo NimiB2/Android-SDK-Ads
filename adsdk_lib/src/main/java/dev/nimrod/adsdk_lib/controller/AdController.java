@@ -20,11 +20,14 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * Manages communication with the ad server API.
+ * Handles ad loading and event tracking requests.
+ */
 public class AdController {
     private static final String TAG = "AdController";
     private static final String BASE_URL = "https://ad-server-kappa.vercel.app/";
     private Ad currentAd;
-
     private static AdController instance;
 
     private AdController() {
@@ -61,6 +64,12 @@ public class AdController {
         }
     }
 
+    /**
+     * Requests a random ad from the server for the specified package.
+     *
+     * @param packageName The package name of the requesting application
+     * @param adCallback  Callback to handle the ad response or errors
+     */
     public void initRandomAd(String packageName, AdCallback adCallback) {
         Log.d(TAG, "Requesting ad for package: " + packageName);
 

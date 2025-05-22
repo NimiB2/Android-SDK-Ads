@@ -51,15 +51,13 @@ public class MainActivity extends AppCompatActivity implements AdCallback {
 
         // Initialize AdSdk
         Log.d(TAG, "Initializing AdSdk with package: " + getPackageName());
-        AdSdk.init(this,this);
+        AdSdk.init(this, this);
 
         Log.d(TAG, "AdSdk initialized");
 
         findViews();
         initViews();
         initButtons();
-
-//        loadAd();
     }
 
     private void findViews() {
@@ -82,7 +80,8 @@ public class MainActivity extends AppCompatActivity implements AdCallback {
     private void updateStats() {
         main_TXT_coins.setText(String.valueOf(coinsCount));
         main_TXT_gems.setText(String.valueOf(gemsCount));
-        main_TXT_lives.setText(livesCount + "/5");
+        int finalLive = livesCount;
+        main_TXT_lives.setText(String.format("%d/%d", livesCount, finalLive));
     }
 
 
@@ -125,11 +124,9 @@ public class MainActivity extends AppCompatActivity implements AdCallback {
     }
 
     private void loadAd() {
-        main_BTN_showAdButton.setEnabled(false);
         main_BTN_showAdButton.setText("WATCH AD FOR 100 COINS");
         Log.d(TAG, "Requesting new ad");
         Log.d(TAG, "Initializing AdSdk with package 222: " + getPackageName());
-//        AdSdk.init(this,this);
 
     }
 

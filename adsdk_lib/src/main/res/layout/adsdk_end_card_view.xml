@@ -3,32 +3,32 @@
     android:id="@+id/end_card_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#AA000000"
-    android:padding="24dp"
-    android:elevation="16dp">
+    android:background="@color/end_card_BG"
+    android:elevation="@dimen/small_margin"
+    android:padding="@dimen/end_card_padding">
 
     <LinearLayout
-        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/advertiser_name"
-            android:text="Sponsored by"
-            android:textColor="#FFFFFF"
-            android:textSize="32sp"
-            android:textStyle="bold"
-            android:gravity="center"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/sponsored_by"
+            android:textColor="@color/white"
+            android:textSize="@dimen/big_text_size"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/open_link_button"
-            android:text="Learn More"
-            android:layout_marginTop="16dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="@string/learn_more" />
     </LinearLayout>
 </FrameLayout>

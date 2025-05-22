@@ -11,9 +11,12 @@ import dev.nimrod.adsdk_lib.model.Ad;
 import dev.nimrod.adsdk_lib.ui.AdPlayerActivity;
 import dev.nimrod.adsdk_lib.util.EventEnum;
 
+/**
+ * Central manager for ad lifecycle, preloading, and watch time tracking.
+ * Coordinates between ad loading, display, and event reporting.
+ */
 public class AdManager {
     private static final String TAG = "AdManager";
-
     private static AdManager instance;
     private String packageName;
     private Ad currentAd;
@@ -25,6 +28,10 @@ public class AdManager {
     private float totalWatchDuration;
     private boolean isWatchTimeTrackingActive = false;
 
+    /**
+     * Central manager for ad lifecycle, preloading, and watch time tracking.
+     * Coordinates between ad loading, display, and event reporting.
+     */
     private AdManager() {
         adController = AdController.getInstance();
         preloadManager = AdPreloadManager.getInstance();
@@ -47,6 +54,12 @@ public class AdManager {
         return packageName;
     }
 
+    /**
+     * Initializes ad loading, preferring preloaded ads when available.
+     *
+     * @param context  The application context
+     * @param callback Callback to handle ad loading results
+     */
     public void initAd(Context context, AdCallback callback) {
         Log.d(TAG, "initAd called");
         this.userCallback = callback;
@@ -130,10 +143,16 @@ public class AdManager {
         currentAd = null;
     }
 
+    /**
+     * Checks for available ads and initiates display if possible.
+     * Uses preloaded ads when current ad is not available.
+     *
+     * @param activity The activity to launch the ad player from
+     */
     public void checkAdDisplay(Activity activity) {
         if (currentAd != null) {
             startAdDisplay(activity);
-        }else if(preloadManager.hasPreloadedAd()){
+        } else if (preloadManager.hasPreloadedAd()) {
             currentAd = preloadManager.getPreloadedAd();
             Log.d(TAG, "Using preloaded ad for display: " + (currentAd != null ? currentAd.getId() : "none"));
             startAdDisplay(activity);
@@ -144,7 +163,7 @@ public class AdManager {
         }
     }
 
-    private void startAdDisplay(Activity activity){
+    private void startAdDisplay(Activity activity) {
         Log.d(TAG, "Displaying ad: " + currentAd.getId());
 
         // Reset watch time tracking
@@ -176,6 +195,11 @@ public class AdManager {
         }
     }
 
+    /**
+     * Calculates total watch duration including any currently active tracking session.
+     *
+     * @return Total watch duration in seconds
+     */
     public float getWatchDuration() {
         if (isWatchTimeTrackingActive && lastWatchTimeStart > 0) {
             long currentTime = SystemClock.elapsedRealtime();
@@ -184,6 +208,11 @@ public class AdManager {
         return totalWatchDuration;
     }
 
+    /**
+     * Creates and sends an ad interaction event to the server.
+     *
+     * @param eventType The type of interaction (view, click, skip, exit)
+     */
     public void createEvent(EventEnum eventType) {
         if (currentAd == null || currentAd.getId() == null) {
             Log.e(TAG, "Cannot create event: no current ad or invalid ad ID");
@@ -194,7 +223,7 @@ public class AdManager {
         adController.sendAdEvent(
                 currentAd.getId(),
                 packageName,
-                eventType.getValue(), // Use getValue() instead of name().toLowerCase()
+                eventType.getValue(),
                 duration
         );
     }

@@ -16,7 +16,6 @@ public class Event {
     private EventDetails eventDetails;
 
 
-
     public Event() {
         this.eventDetails = new EventDetails();
 
@@ -48,10 +47,12 @@ public class Event {
         this.eventDetails.packageName = packageName;
         return this;
     }
+
     public Event setEventType(String eventType) {
         this.eventDetails.eventType = eventType;
         return this;
     }
+
     public Event setWatchDuration(float watchDuration) {
         this.eventDetails.watchDuration = watchDuration;
         return this;

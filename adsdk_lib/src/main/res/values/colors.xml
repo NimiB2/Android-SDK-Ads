@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="textBackGround">#80000000</color>
+    <color name="skip_button_BG_Tint">#E0E0E0</color>
+    <color name="skip_button_text_color">#303030</color>
+    <color name="exit_button_BG_Tint">#4CAF50</color>
+    <color name="end_card_BG">#AA000000</color>
+</resources>

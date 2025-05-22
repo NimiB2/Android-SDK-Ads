@@ -6,6 +6,10 @@ import dev.nimrod.adsdk_lib.callback.AdCallback;
 import dev.nimrod.adsdk_lib.controller.AdController;
 import dev.nimrod.adsdk_lib.model.Ad;
 
+/**
+ * Manages background preloading of ads to ensure instant availability.
+ * Automatically loads the next ad when the current preloaded ad is consumed.
+ */
 public class AdPreloadManager {
     private static final String TAG = "AdPreloadManager";
     private static AdPreloadManager instance;
@@ -36,7 +40,11 @@ public class AdPreloadManager {
         return preloadedAd != null;
     }
 
-
+    /**
+     * Retrieves the preloaded ad and automatically starts loading the next one.
+     *
+     * @return The preloaded ad, or null if none available
+     */
     public Ad getPreloadedAd() {
         Ad ad = preloadedAd;
         preloadedAd = null;
@@ -44,6 +52,9 @@ public class AdPreloadManager {
         return ad;
     }
 
+    /**
+     * Loads the next ad in the background with automatic retry on failure.
+     */
     public void preloadNextAd() {
         // Skip if already loading or package name not set
         if (isLoading || packageName == null) {
