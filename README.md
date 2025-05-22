@@ -9,7 +9,7 @@ For advanced campaign management a companion Flask + MongoDB backend is avai
 ---
 
 ## Documentation
-Full guides and API reference are available at **[AdSDK Documentation](https://nimib2.github.io/Android-SDK-Ads/)**.
+Full guides and API reference are available at **[AdSDK Documentation](https://nimib2.github.io/video-ad-sdk-android/)**.
 
 ---
 
