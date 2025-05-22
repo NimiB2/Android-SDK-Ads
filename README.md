@@ -15,7 +15,7 @@ Full guides and API reference are available at **[AdSDK Documentation](https://n
 
 ## 📱 AdSDK – Watch How It Works
 
-<a href="https://www.kapwing.com/videos/68264cf77eecde027c279537">
+<a href="https://NimiB2.github.io/video-ad-server/demo.html">
   <img src="https://i.imgur.com/BarqWRo.png" alt="AdSDK Demo" width="200"/>
 </a>
 
