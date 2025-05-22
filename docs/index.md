@@ -18,7 +18,7 @@ The Ad SDK system consists of several interconnected components that work togeth
 
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/NimiB2/Android-SDK-Ads/main/docs/assets/architecture-diagram.jpg"
+ <img src="https://raw.githubusercontent.com/NimiB2/video-ad-sdk-android/main/docs/assets/architecture-diagram.jpg"
        alt="Project Architecture Diagram" width="600"/>
 </div>
 
@@ -66,6 +66,6 @@ The `dev.nimrod.adsdk_lib.ui.AdPlayerActivity` handles video playback and user i
 
 ## Related Documentation
 
-For the server-side components that power this SDK, see the [Flask Ad Server Documentation](https://nimib2.github.io/Ad-Server/).
-For the management interface and campaign analytics, see the [Ad Portal Documentation](https://nimib2.github.io/ad-platform-portal/).
+For the server-side components that power this SDK, see the [Flask Ad Server Documentation](https://nimib2.github.io/video-ad-server/).
+For the management interface and campaign analytics, see the [Ad Portal Documentation](https://nimib2.github.io/video-ad-portal/).
 
