@@ -13,6 +13,15 @@ Full guides and API reference are available at **[AdSDK Documentation](https://n
 
 ---
 
+## 📱 AdSDK – Watch How It Works
+
+<a href="https://www.kapwing.com/videos/68264cf77eecde027c279537">
+  <img src="https://i.imgur.com/BarqWRo.png" alt="AdSDK Demo" width="200"/>
+</a>
+
+---
+
+
 ## 📸 Screenshots & Video
 
 <table>
@@ -71,7 +80,7 @@ Full guides and API reference are available at **[AdSDK Documentation](https://n
 1. **Add the dependency**:
 ```kotlin
 dependencies {
-    implementation("com.github.NimiB2:Android-SDK-Ads:1.0.7")
+    implementation("com.github.NimiB2:Android-SDK-Ads:1.0.8")
 }
 ```
 2. **Initialise the SDK** in your Application or first Activity:
