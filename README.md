@@ -1,9 +1,8 @@
 # AdSDK – Android Video Advertisement Library
 
-![License](https://img.shields.io/badge/license-Apache--2.0-green.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![JitPack](https://img.shields.io/badge/JitPack-1.0.11-red.svg)
 ![API](https://img.shields.io/badge/API-26%2B-blue.svg)
-![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Smart%20Rate%20Us%20Dialog-brightgreen.svg)
 ![Repo Size](https://img.shields.io/badge/repo%20size-2%20MiB-blue.svg)
 
 A professional Android SDK for seamless video advertisement integration with automatic preloading, user interaction tracking, and reward system support.
