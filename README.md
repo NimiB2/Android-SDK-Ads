@@ -11,19 +11,7 @@ A professional Android SDK for seamless video advertisement integration with aut
 ## 📚 Documentation & Demo
 
 - **[📖 Complete Documentation](https://nimib2.github.io/video-ad-sdk-android/)** - API reference, guides, and examples
-- **[🎥 Watch Demo](https://NimiB2.github.io/video-ad-server/demo.html)** - See the SDK in action
-
----
-
-## ✨ What's New
-
-### Version 1.0.11
-- Enhanced ad preloading with background management
-- Improved video scaling and full-screen display
-- Added comprehensive event tracking (view, click, skip, exit)
-- Optimized lifecycle management for pause/resume scenarios
-- Built-in reward system integration with callback support
-- Professional end-card display with call-to-action buttons
+- **[🎥 Watch Full System Demo](https://NimiB2.github.io/video-ad-server/demo.html)** - See the SDK in action
 
 ---
 
@@ -231,6 +219,18 @@ The SDK integrates with the [Flask Ad Server](https://nimib2.github.io/video-ad-
 - **[Callbacks Documentation](https://nimib2.github.io/video-ad-sdk-android/callbacks.html)** - Event handling guide
 - **[Troubleshooting](https://nimib2.github.io/video-ad-sdk-android/troubleshooting.html)** - Common issues and solutions
 - **[Ad Lifecycle](https://nimib2.github.io/video-ad-sdk-android/ad-lifecycle.html)** - Understanding ad flow
+
+---
+
+## ✨ What's New
+
+### Version 1.0.11
+- Enhanced ad preloading with background management
+- Improved video scaling and full-screen display
+- Added comprehensive event tracking (view, click, skip, exit)
+- Optimized lifecycle management for pause/resume scenarios
+- Built-in reward system integration with callback support
+- Professional end-card display with call-to-action buttons
 
 ---
 
