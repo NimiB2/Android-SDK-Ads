@@ -234,20 +234,10 @@ The SDK integrates with the [Flask Ad Server](https://nimib2.github.io/video-ad-
 
 ---
 
-## 🙏 Credits
-
-### Core Technologies
-- **[Retrofit](https://square.github.io/retrofit/)** by Square - Network communication
-- **[Gson](https://github.com/google/gson)** by Google - JSON serialization
-- **[Android Jetpack](https://developer.android.com/jetpack)** by Google - Core Android components
-
-### Development Tools
-- **[JitPack](https://jitpack.io/)** - Library distribution platform
-- **[Material Design](https://material.io/)** by Google - UI design system
-
----
-
 ## 📄 License
+
+**This is an educational study project created for learning purposes only.**
+Demo content and advertisements are used for demonstration and are not intended for commercial use.
 
 ```
 MIT License
@@ -268,5 +258,3 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 ```
-
-**This is an educational project created for learning purposes.**
