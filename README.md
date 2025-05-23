@@ -80,7 +80,7 @@ Full guides and API reference are available at **[AdSDK Documentation](https://n
 1. **Add the dependency**:
 ```kotlin
 dependencies {
-    implementation("com.github.NimiB2:Android-SDK-Ads:1.0.8")
+    implementation("com.github.NimiB2:Android-SDK-Ads:1.0.11")
 }
 ```
 2. **Initialise the SDK** in your Application or first Activity:
