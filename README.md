@@ -10,8 +10,7 @@ A professional Android SDK for seamless video advertisement integration with aut
 
 ## 📚 Documentation & Demo
 
-- **[Complete Documentation](https://nimib2.github.io/video-ad-sdk-android/)** - API reference, guides, and examples
-- **[🎥 Watch Demo](https://NimiB2.github.io/video-ad-server/demo.html)** - See the SDK in action
+**[📖 Complete Documentation](https://nimib2.github.io/video-ad-sdk-android/)** | **[🎥 Live Demo](https://NimiB2.github.io/video-ad-server/demo.html)**
 
 <a href="https://NimiB2.github.io/video-ad-server/demo.html">
  <img src="https://i.imgur.com/BarqWRo.png" alt="AdSDK Demo" width="200"/>
